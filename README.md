@@ -1,2 +1,2 @@
 # NausGame
-Simple Unity Game based in the classic Asteroid game.
+Simple Unity Game based in the classic Asteroids game.
