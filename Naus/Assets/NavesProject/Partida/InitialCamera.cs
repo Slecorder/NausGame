@@ -21,6 +21,7 @@ public class CameraInicial : MonoBehaviour
     private bool transicioIniciada = false;
     private float tempsTransicio = 0f;
     private GameObject botoInici;
+    private GameObject botoSortir;
     
     // Variables per a la interpolació de càmeres
     private Vector3 posicioInicial;
@@ -39,9 +40,21 @@ public class CameraInicial : MonoBehaviour
     
     void Start()
     {
+        // Configurar botó d'inici
         botoInici = GameObject.FindGameObjectWithTag("StartButton");
-        Button boto = botoInici.GetComponent<Button>();
-        boto.onClick.AddListener(IniciarTransicio);
+        if (botoInici != null)
+        {
+            Button boto = botoInici.GetComponent<Button>();
+            boto.onClick.AddListener(IniciarTransicio);
+        }
+        
+        // Configurar botó de sortida
+        botoSortir = GameObject.FindGameObjectWithTag("ExitButton");
+        if (botoSortir != null)
+        {
+            Button botoExit = botoSortir.GetComponent<Button>();
+            botoExit.onClick.AddListener(SortirDelJoc);
+        }
     }
 
     void Update()
@@ -96,6 +109,12 @@ public class CameraInicial : MonoBehaviour
             botoInici.SetActive(false);
         }
         
+        // Deshabilitar el botó de sortida
+        if (botoSortir != null)
+        {
+            botoSortir.SetActive(false);
+        }
+        
         // Deshabilitar el camp d'entrada del nom
         GameObject inputName = GameObject.FindGameObjectWithTag("InputName");
         if (inputName != null)
@@ -109,6 +128,20 @@ public class CameraInicial : MonoBehaviour
         {
             puntuacionsButton.SetActive(false);
         }
+    }
+    
+    // Mètode per sortir del joc
+    private void SortirDelJoc()
+    {
+        Debug.Log("Sortint del joc...");
+        
+        #if UNITY_EDITOR
+            // Si s'està executant a l'editor, aturar el mode Play
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            // Si s'està executant com a aplicació compilada, tancar l'aplicació
+            Application.Quit();
+        #endif
     }
     
     private void RealitzarTransicio()

@@ -14,6 +14,8 @@ public class Moviment : MonoBehaviour
     
     [Header("Límits")]
     [SerializeField] private float velocitatMaxima = 40f;
+    [SerializeField] private float limitX = 45f; // Límite en el eje X (ancho del área de juego)
+    [SerializeField] private float limitZ = 45f; // Límite en el eje Z (altura del área de juego)
     
     // Variables per al PowerUp de velocitat
     private float velocitatOriginal;
@@ -92,7 +94,15 @@ public class Moviment : MonoBehaviour
         // Aplicar moviment físic només si la velocitat és significativa
         if (velocitatActual > velocitatMinima)
         {
-            transform.position += direccioMoviment * velocitatActual * Time.fixedDeltaTime;
+            // Calcular la nova posició
+            Vector3 newPosition = transform.position + direccioMoviment * velocitatActual * Time.fixedDeltaTime;
+            
+            // Limitar la nova posició
+            newPosition.x = Mathf.Clamp(newPosition.x, -limitX, limitX);
+            newPosition.z = Mathf.Clamp(newPosition.z, -limitZ, limitZ);
+            
+            // Aplicar la nova posició
+            transform.position = newPosition;
         }
         else
         {
@@ -100,7 +110,6 @@ public class Moviment : MonoBehaviour
         }
     }
     
-    // Mètode per augmentar la velocitat (PowerUp)
     public void AugmentarVelocitat(float multiplicador, float duracio)
     {
         // Guardar la velocitat original si no està ja augmentada

@@ -21,6 +21,7 @@ TagManager:
   - PuntuacionsButton
   - InputName
   - VelocityEffect
+  - ExitButton
   layers:
   - Default
   - TransparentFX
