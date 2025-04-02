@@ -12931,11 +12931,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1514653243884618936, guid: e0275de8ad051be42b4925e2bdc1916c, type: 3}
       propertyPath: limitX
-      value: 144
+      value: 142
       objectReference: {fileID: 0}
     - target: {fileID: 1514653243884618936, guid: e0275de8ad051be42b4925e2bdc1916c, type: 3}
       propertyPath: limitZ
-      value: 88
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 1824617382876571399, guid: e0275de8ad051be42b4925e2bdc1916c, type: 3}
       propertyPath: m_IsActive
