@@ -397,6 +397,8 @@ MonoBehaviour:
   desacceleracio: 50
   velocitatMinima: 0.1
   velocitatMaxima: 500
+  limitX: 45
+  limitZ: 45
 --- !u!1 &519280462217614924
 GameObject:
   m_ObjectHideFlags: 0
@@ -9131,6 +9133,7 @@ GameObject:
   - component: {fileID: 798253414885946361}
   - component: {fileID: 7192682447213749915}
   - component: {fileID: 6692807712679271033}
+  - component: {fileID: 8560761079227355813}
   m_Layer: 6
   m_Name: Escut
   m_TagString: Escut
@@ -9255,3 +9258,30 @@ MonoBehaviour:
   velocitatEscalatTextura: 0.3
   tilingMinim: 2
   tilingMaxim: 4
+--- !u!54 &8560761079227355813
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9006086298200564390}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0

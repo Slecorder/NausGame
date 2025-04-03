@@ -12945,6 +12945,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: VelocityEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 8560761079227355813, guid: e0275de8ad051be42b4925e2bdc1916c, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

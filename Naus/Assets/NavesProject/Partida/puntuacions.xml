@@ -5,6 +5,21 @@
     <Data>2025-03-31 20:02:11</Data>
   </Puntuacio>
   <Puntuacio>
+    <Nom>Jugador</Nom>
+    <Punts>960</Punts>
+    <Data>2025-04-03 17:16:32</Data>
+  </Puntuacio>
+  <Puntuacio>
+    <Nom>Jugador</Nom>
+    <Punts>930</Punts>
+    <Data>2025-04-03 17:37:07</Data>
+  </Puntuacio>
+  <Puntuacio>
+    <Nom>Jugador</Nom>
+    <Punts>630</Punts>
+    <Data>2025-04-03 17:33:55</Data>
+  </Puntuacio>
+  <Puntuacio>
     <Nom>Raul</Nom>
     <Punts>340</Punts>
     <Data>2025-03-31 19:55:03</Data>
@@ -18,5 +33,10 @@
     <Nom>Jugador</Nom>
     <Punts>20</Punts>
     <Data>2025-04-01 22:39:06</Data>
+  </Puntuacio>
+  <Puntuacio>
+    <Nom>Jugador</Nom>
+    <Punts>0</Punts>
+    <Data>2025-04-03 17:32:56</Data>
   </Puntuacio>
 </Puntuacions>
