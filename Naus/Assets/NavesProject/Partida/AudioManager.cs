@@ -9,6 +9,18 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager Instance { get; private set; }
     
+    // Getters i setters per al volum general
+    public float GetVolumeGeneral()
+    {
+        return volumeGeneral;
+    }
+    
+    public void SetVolumeGeneral(float nouVolum)
+    {
+        volumeGeneral = Mathf.Clamp01(nouVolum);
+        ActualitzarVolumTotsSons();
+    }
+    
     private List<AudioSource> audioSourcePool = new List<AudioSource>();
     private int currentAudioSourceIndex = 0;
     
@@ -31,6 +43,20 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
             return;
+        }
+    }
+    
+    // Actualitza el volum de tots els AudioSources actius
+    private void ActualitzarVolumTotsSons()
+    {
+        foreach (AudioSource source in audioSourcePool)
+        {
+            if (source.isPlaying)
+            {
+                // Mantenir el volum relatiu però actualitzar amb el nou volum general
+                float volumRelatiu = source.volume / volumeGeneral;
+                source.volume = volumRelatiu * volumeGeneral;
+            }
         }
     }
     

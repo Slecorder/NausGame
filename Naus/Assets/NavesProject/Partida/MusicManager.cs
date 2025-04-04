@@ -8,6 +8,21 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private bool reproduirAlIniciar = true;
     [SerializeField] private bool repetirMusica = true;
     
+    // Getters i setters per al volum de la música
+    public float GetVolumMusica()
+    {
+        return volumMusica;
+    }
+    
+    public void SetVolumMusica(float nouVolum)
+    {
+        volumMusica = Mathf.Clamp01(nouVolum);
+        if (audioSource != null)
+        {
+            audioSource.volume = volumMusica;
+        }
+    }
+    
     private AudioSource audioSource;
     
     private void Awake()

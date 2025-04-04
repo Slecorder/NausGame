@@ -128,6 +128,13 @@ public class CameraInicial : MonoBehaviour
         {
             puntuacionsButton.SetActive(false);
         }
+        
+        // Deshabilitar el panel de volum
+        GameObject panelVolum = GameObject.Find("Volum");
+        if (panelVolum != null)
+        {
+            panelVolum.SetActive(false);
+        }
     }
     
     // Mètode per sortir del joc

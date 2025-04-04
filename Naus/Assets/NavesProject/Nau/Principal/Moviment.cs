@@ -6,6 +6,7 @@ public class Moviment : MonoBehaviour
     [Header("Configuració Bàsica")]
     [SerializeField] [Range(0.1f, 200f)] private float velocitat = 40f;
     [SerializeField] [Range(0.1f, 300f)] private float velocitatRotacio = 150f;
+    [SerializeField] [Range(0f, 50f)] private float inclinacioLateral = 15f; // Graus d'inclinació lateral
     
     [Header("Configuració Inèrcia")]
     [SerializeField] [Range(0.1f, 100f)] private float acceleracio = 50f;
@@ -66,10 +67,16 @@ public class Moviment : MonoBehaviour
         float inputRotacio = Input.GetAxis("Horizontal");
         float inputAcceleracio = Input.GetAxis("Vertical");
         
-        // Aplicar rotació
+        // Aplicar rotació en Y (gir horitzontal)
         if (inputRotacio != 0)
         {
             transform.Rotate(0, inputRotacio * velocitatRotacio * Time.deltaTime, 0);
+            float inclinacio = -inputRotacio * inclinacioLateral;
+            transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, inclinacio);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
         }
         
         // Aplicar acceleració/desacceleració amb inèrcia
