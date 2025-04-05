@@ -31,6 +31,11 @@
   </Puntuacio>
   <Puntuacio>
     <Nom>Jugador</Nom>
+    <Punts>70</Punts>
+    <Data>2025-04-05 10:53:14</Data>
+  </Puntuacio>
+  <Puntuacio>
+    <Nom>Jugador</Nom>
     <Punts>20</Punts>
     <Data>2025-04-01 22:20:27</Data>
   </Puntuacio>
@@ -43,10 +48,5 @@
     <Nom>Jugador</Nom>
     <Punts>0</Punts>
     <Data>2025-04-03 17:32:56</Data>
-  </Puntuacio>
-  <Puntuacio>
-    <Nom>Jugador</Nom>
-    <Punts>0</Punts>
-    <Data>2025-04-04 15:24:21</Data>
   </Puntuacio>
 </Puntuacions>

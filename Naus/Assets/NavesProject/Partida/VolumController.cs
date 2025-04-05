@@ -19,10 +19,10 @@ public class VolumController : MonoBehaviour
     {
         // Inicialitzar referències si no estan assignades
         if (audioManager == null)
-            audioManager = FindObjectOfType<AudioManager>();
+            audioManager = FindAnyObjectByType<AudioManager>();
             
         if (musicManager == null)
-            musicManager = FindObjectOfType<MusicManager>();
+            musicManager = FindAnyObjectByType<MusicManager>();
         
         // Configurar els sliders
         ConfigurarSliders();
