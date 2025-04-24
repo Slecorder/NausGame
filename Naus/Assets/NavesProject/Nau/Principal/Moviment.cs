@@ -45,6 +45,11 @@ public class Moviment : MonoBehaviour
         efecteVelocitat = transform.Find("VelocityEffect").gameObject;
     }
     
+    // Flags públicos para controles táctiles
+    [HideInInspector] public bool touchAccelerar = false;
+    [HideInInspector] public bool touchDreta = false;
+    [HideInInspector] public bool touchEsquerra = false;
+
     void Update()
     {
         // No fer res si el joc no ha començat
@@ -66,6 +71,11 @@ public class Moviment : MonoBehaviour
         // Obtenir input del jugador
         float inputRotacio = Input.GetAxis("Horizontal");
         float inputAcceleracio = Input.GetAxis("Vertical");
+
+        // Combinar input tradicional con flags táctiles
+        if (touchDreta) inputRotacio = 1f;
+        else if (touchEsquerra) inputRotacio = -1f;
+        if (touchAccelerar) inputAcceleracio = 1f;
         
         // Aplicar rotació en Y (gir horitzontal)
         if (inputRotacio != 0)

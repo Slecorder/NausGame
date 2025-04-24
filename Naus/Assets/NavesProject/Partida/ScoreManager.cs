@@ -5,6 +5,9 @@ using System.Xml;
 using System.IO;
 using System.Collections.Generic;
 using System;
+using Firebase;
+using Firebase.Database;
+using Firebase.Extensions;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -32,6 +35,16 @@ public class ScoreManager : MonoBehaviour
             return;
         }
         
+        // Inicializar Firebase
+        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task => {
+            var dependencyStatus = task.Result;
+            if (dependencyStatus == DependencyStatus.Available) {
+                Debug.Log("Firebase inicializado correctamente");
+            } else {
+                Debug.LogError($"No se pudo inicializar Firebase: {dependencyStatus}");
+            }
+        });
+
         // Definir la ruta de l'arxiu XML
 #if UNITY_EDITOR
         // En modo editor, guardar en la carpeta del proyecto
@@ -111,7 +124,8 @@ public class ScoreManager : MonoBehaviour
         List<PuntuacioJugador> puntuacions = CarregarPuntuacionsXML();
         
         // Afegir la puntuació actual amb la data actual
-        puntuacions.Add(new PuntuacioJugador(nomJugador, puntuacio, DateTime.Now));
+        var novaPuntuacio = new PuntuacioJugador(nomJugador, puntuacio, DateTime.Now);
+        puntuacions.Add(novaPuntuacio);
         
         // Ordenar les puntuacions de major a menor
         puntuacions.Sort((a, b) => b.Puntuacio.CompareTo(a.Puntuacio));
@@ -124,6 +138,9 @@ public class ScoreManager : MonoBehaviour
         
         // Guardar les puntuacions en XML
         GuardarPuntuacionsXML(puntuacions);
+
+        // Guardar la nueva puntuación en Firebase
+        GuardarPuntuacioEnFirebase(novaPuntuacio);
         
         // Actualitzar el rècord si és necessari
         if (puntuacions.Count > 0 && puntuacions[0].Puntuacio > record)
@@ -173,6 +190,27 @@ public class ScoreManager : MonoBehaviour
         return puntuacions;
     }
     
+    // Método para guardar una puntuación en Firebase
+    private void GuardarPuntuacioEnFirebase(PuntuacioJugador puntuacio)
+    {
+        DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
+        string key = reference.Child("puntuacions").Push().Key;
+
+        var datos = new Dictionary<string, object>
+        {
+            { "Nom", puntuacio.Nom },
+            { "Punts", puntuacio.Puntuacio },
+            { "Data", puntuacio.Data.ToString("yyyy-MM-dd HH:mm:ss") }
+        };
+        reference.Child("puntuacions").Child(key).SetValueAsync(datos)
+            .ContinueWithOnMainThread(task => {
+                if (task.IsFaulted || task.IsCanceled)
+                    Debug.LogError("Error guardando en Firebase: " + task.Exception);
+                else
+                    Debug.Log("Puntuación guardada en Firebase correctamente.");
+            });
+    }
+
     // Mètode per guardar les puntuacions en l'arxiu XML
     private void GuardarPuntuacionsXML(List<PuntuacioJugador> puntuacions)
     {

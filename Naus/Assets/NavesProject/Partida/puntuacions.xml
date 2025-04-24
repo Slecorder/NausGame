@@ -1,28 +1,8 @@
 <Puntuacions>
   <Puntuacio>
-    <Nom>Jugador</Nom>
-    <Punts>1150</Punts>
-    <Data>2025-03-31 20:02:11</Data>
-  </Puntuacio>
-  <Puntuacio>
-    <Nom>Jugador</Nom>
-    <Punts>960</Punts>
-    <Data>2025-04-03 17:16:32</Data>
-  </Puntuacio>
-  <Puntuacio>
-    <Nom>Jugador</Nom>
-    <Punts>930</Punts>
-    <Data>2025-04-03 17:37:07</Data>
-  </Puntuacio>
-  <Puntuacio>
-    <Nom>Jugador</Nom>
-    <Punts>630</Punts>
-    <Data>2025-04-03 17:33:55</Data>
-  </Puntuacio>
-  <Puntuacio>
-    <Nom>Jugador</Nom>
-    <Punts>610</Punts>
-    <Data>2025-04-04 15:27:55</Data>
+    <Nom>test</Nom>
+    <Punts>1030</Punts>
+    <Data>2025-04-23 18:31:50</Data>
   </Puntuacio>
   <Puntuacio>
     <Nom>Raul</Nom>
@@ -30,23 +10,38 @@
     <Data>2025-03-31 19:55:03</Data>
   </Puntuacio>
   <Puntuacio>
-    <Nom>Jugador</Nom>
-    <Punts>70</Punts>
-    <Data>2025-04-05 10:53:14</Data>
+    <Nom>test3</Nom>
+    <Punts>130</Punts>
+    <Data>2025-04-24 17:19:21</Data>
   </Puntuacio>
   <Puntuacio>
-    <Nom>Jugador</Nom>
-    <Punts>20</Punts>
-    <Data>2025-04-01 22:20:27</Data>
+    <Nom>raul</Nom>
+    <Punts>110</Punts>
+    <Data>2025-04-24 17:13:06</Data>
   </Puntuacio>
   <Puntuacio>
-    <Nom>Jugador</Nom>
-    <Punts>20</Punts>
-    <Data>2025-04-01 22:39:06</Data>
+    <Nom>asd</Nom>
+    <Punts>110</Punts>
+    <Data>2025-04-24 17:13:49</Data>
   </Puntuacio>
   <Puntuacio>
-    <Nom>Jugador</Nom>
-    <Punts>0</Punts>
-    <Data>2025-04-03 17:32:56</Data>
+    <Nom>xcb</Nom>
+    <Punts>60</Punts>
+    <Data>2025-04-24 15:28:40</Data>
+  </Puntuacio>
+  <Puntuacio>
+    <Nom>test</Nom>
+    <Punts>60</Punts>
+    <Data>2025-04-24 15:39:20</Data>
+  </Puntuacio>
+  <Puntuacio>
+    <Nom>fgd</Nom>
+    <Punts>40</Punts>
+    <Data>2025-04-24 15:26:47</Data>
+  </Puntuacio>
+  <Puntuacio>
+    <Nom>dgs</Nom>
+    <Punts>40</Punts>
+    <Data>2025-04-24 15:32:22</Data>
   </Puntuacio>
 </Puntuacions>

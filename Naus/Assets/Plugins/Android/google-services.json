@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "25266462770",
+    "firebase_url": "https://naves-38a87-default-rtdb.firebaseio.com",
+    "project_id": "naves-38a87",
+    "storage_bucket": "naves-38a87.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:25266462770:android:0d955f7bda2edbd591dc2b",
+        "android_client_info": {
+          "package_name": "com.UnityTechnologies.com.unity.template.urpblank"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAehBTwOMNAFoSnvubZGHcjQUve5lr3NZw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

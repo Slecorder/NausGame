@@ -32,6 +32,9 @@ public class Arma : MonoBehaviour
     }
 
 
+    // Flag público para disparo táctil
+    [HideInInspector] public bool touchDisparar = false;
+
     void Update()
     {
         // Controlar la duración del cooldown reducido
@@ -44,7 +47,7 @@ public class Arma : MonoBehaviour
             }
         }
         
-        if (Input.GetKey(KeyCode.Space) && CanFire)
+        if ((Input.GetKey(KeyCode.Space) || touchDisparar) && CanFire)
         {
             DispararProjectil();
         }

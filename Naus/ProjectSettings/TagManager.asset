@@ -22,6 +22,7 @@ TagManager:
   - InputName
   - VelocityEffect
   - ExitButton
+  - ControlsPantalla
   layers:
   - Default
   - TransparentFX

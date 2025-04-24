@@ -24,7 +24,6 @@ public class VolumController : MonoBehaviour
         if (musicManager == null)
             musicManager = FindAnyObjectByType<MusicManager>();
         
-        // Configurar els sliders
         ConfigurarSliders();
         
         // Afegir listeners als sliders
@@ -65,22 +64,6 @@ public class VolumController : MonoBehaviour
         if (musicManager != null)
         {
             musicManager.SetVolumMusica(nouVolum);
-        }
-    }
-    
-    // Mètode per restaurar els valors inicials (opcional)
-    public void RestaurarValorsInicials()
-    {
-        if (sliderVolumEfectes != null && audioManager != null)
-        {
-            sliderVolumEfectes.value = volumEfectesInicial;
-            audioManager.SetVolumeGeneral(volumEfectesInicial);
-        }
-        
-        if (sliderVolumMusica != null && musicManager != null)
-        {
-            sliderVolumMusica.value = volumMusicaInicial;
-            musicManager.SetVolumMusica(volumMusicaInicial);
         }
     }
 }
